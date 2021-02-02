@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Container, Box, Card, CardContent, Typography, Button, Grid } from '@material-ui/core';
+import React from 'react';
+import { Container, Card, CardContent, Button, Grid } from '@material-ui/core';
 import kanye from '../api/kanye';
 
 class Kanye extends React.Component {
@@ -17,7 +17,7 @@ class Kanye extends React.Component {
         const response = await kanye.get();
         const randImgNum =  Math.floor(Math.random() * Math.floor(5));
 
-        this.setState({ quote: response.data.quote });
+        this.setState({ quote: response.data });
         this.setState({ img: './images/kanye' + randImgNum + '.jpeg' });
     }
 
@@ -25,21 +25,22 @@ class Kanye extends React.Component {
         return (
             <Container maxWidth="lg" className="fullview cardContainer">
                 <Card className="fullview card">
-                    <Grid
-                      container
-                      direction="column"
-                      justify="center"
-                      alignItems="center"
-                    >
-                        <CardContent>
-                            <q>{this.state.quote}</q>
-                        </CardContent>
-                        <br/>
-                        <Button variant="contained" onClick={() => this.onKanyeClick()} >Kanye</Button>
-                        <br/>
-                        <img src={this.state.img} style={{width: '100%'}}></img>
-                    </Grid>
+                    <CardContent>
+                        <Grid
+                        container
+                        direction="column"
+                        justify="center"
+                        alignItems="center"
+                        >
 
+                            <q>{this.state.quote}</q>
+                            <br />
+                            <Button variant="contained" onClick={() => this.onKanyeClick()} >Kanye</Button>
+                            <br />
+                            <img alt="Kanye" src={this.state.img} style={{width: '100%'}}></img>
+                        
+                        </Grid>
+                    </CardContent>
                 </Card>
             </Container>
         )

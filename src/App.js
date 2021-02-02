@@ -47,7 +47,7 @@ export default () => {
                 <Grid
                     container
                     alignItems="center"
-                    className="fullview"1
+                    className="fullview"
                 >
                   <AppBar style={{background: '#1e1f3d'}}>
                     <Tabs value={location.pathname}>
