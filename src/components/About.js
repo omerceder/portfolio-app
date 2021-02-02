@@ -11,7 +11,8 @@ class About extends React.Component {
                         About
                         </Typography>
                         <Typography variant="body1" gutterBottom>
-                            Web Developer <br />
+                            Omer Ceder, <br /> 
+                            Web Developer <br /> 
                             Full Stack developer with experience in development and team leadership.  <br />
                             Server Side experience: AWS, Google Cloud, Apache, NGNIX, PHP, NodeJS.  <br />
                             Client Side experience: HTML5, JavaScript, ReactJS.  <br />

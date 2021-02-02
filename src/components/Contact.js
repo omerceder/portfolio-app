@@ -1,16 +1,15 @@
 import React from 'react';
-import { Container, Card, TextField } from '@material-ui/core';
+import { Container, Card, CardContent, TextField } from '@material-ui/core';
+import ContactForm from './ContactForm.js';
 
 class Contact extends React.Component {
     render() {
         return (
             <Container maxWidth="lg" className="fullview cardContainer">
                 <Card className="fullview card">
-                    <form noValidate autoComplete="off">
-                        <TextField id="standard-basic" label="Standard" />
-                        <TextField id="filled-basic" label="Filled" variant="filled" />
-                        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-                    </form>
+                    <CardContent>
+                        <ContactForm />
+                    </CardContent>
                 </Card>
             </Container>
         )

@@ -23,6 +23,14 @@ const useStyles = makeStyles({
     '& .card': {
       maxHeight: '800px'
     },
+    '& .form': {
+      display: 'flex',
+      flexDirection: 'column',
+      padding: '20px',
+    },
+    '& .form-el': {
+      marginTop: '20px',
+    },
   },
 });
 
