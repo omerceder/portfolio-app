@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import { makeStyles, Grid, AppBar, Tabs, Tab, Avatar } from '@material-ui/core';
 import { Switch, Route, Link, BrowserRouter, Redirect } from "react-router-dom";
 import About from './components/About';
@@ -10,6 +10,9 @@ const useStyles = makeStyles({
     background: 'linear-gradient(180deg, #212121 60%, #2f387d 96%)',
     height: '100vh',
     color: 'white',
+    '& AppBar': {
+      background: 'red'
+    },
     '& .fullview': {
       height: '100%'
     },
@@ -36,7 +39,7 @@ export default () => {
         <Route exact path="/">
             <Redirect to="/about" />
         </Route>
-        <div className="App" className="fullview">
+        <div className="App fullview">
           <Route
             path="/"
             render={({ location }) => (
@@ -44,18 +47,13 @@ export default () => {
                 <Grid
                     container
                     alignItems="center"
-                    className="fullview"
+                    className="fullview"1
                 >
-                  <AppBar>
+                  <AppBar style={{background: '#1e1f3d'}}>
                     <Tabs value={location.pathname}>
                       <Tab label="About" value="/about" component={Link} to={allTabs[0]} />
                       <Tab label="Kanye" value="/kanye" component={Link} to={allTabs[1]} />
-                      <Tab
-                        value="/contact"
-                        label="Contact"
-                        component={Link}
-                        to={allTabs[2]}
-                      />
+                      <Tab label="Contact" value="/contact" component={Link} to={allTabs[2]} />
                     </Tabs>
                   </AppBar>
 
